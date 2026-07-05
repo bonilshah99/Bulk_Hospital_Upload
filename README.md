@@ -29,5 +29,3 @@ source venv/bin/activate
 pip install -r requirements.txt
 uvicorn app:app --reload
 ```
-
-The API docs will be at http://localhost:8000/docs

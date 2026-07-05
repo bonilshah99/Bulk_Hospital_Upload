@@ -1,6 +1,6 @@
 # Hospital Bulk Processing Service
 
-A lightweight FastAPI service that accepts CSV uploads of hospital records and forwards them to the [Hospital Directory API](https://hospital-directory.onrender.com/docs) in batch.
+A lightweight FastAPI service that accepts CSV uploads of hospital records and forwards them to the [Hospital Directory API] in batch.
 
 ## How it works
 

@@ -31,32 +31,3 @@ uvicorn app:app --reload
 ```
 
 The API docs will be at http://localhost:8000/docs
-
-## Running tests
-
-```bash
-pip install pytest
-pytest tests/ -v
-```
-
-## Deploy on Render
-
-1. Push this repo to GitHub.
-2. Create a new **Web Service** on Render linked to the repo.
-3. Set:
-   - Build command: `pip install -r requirements.txt`
-   - Start command: `uvicorn app:app --host 0.0.0.0 --port $PORT`
-   - Python version: 3.11
-
-The `render.yaml` file is included for blueprint deployments.
-
-## Sample CSV
-
-See `sample.csv` for a quick test file.
-
-## Architecture notes
-
-- **httpx** async client for non-blocking calls to the Hospital Directory API.
-- In-memory `batch_store` dict tracks progress (acceptable for the assignment scope; a production system would use Redis or a database).
-- WebSocket endpoint lets a client subscribe to progress updates for long-running batches.
-- Resume endpoint retries only the failed rows from a prior batch attempt.
